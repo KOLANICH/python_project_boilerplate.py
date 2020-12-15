@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.2.0", "setuptools_scm[toml]>=3.4.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{cookiecutter.package_name}}"
+readme = "ReadMe.md"
+description = ""
+authors = [{name = "KOLANICH"}]
+classifiers = [
+	"Development Status :: 4 - Beta",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"License :: Public Domain",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3 :: Only",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["{{cookiecutter.package_name}}"]
+license = {text = "Unlicense"}
+requires-python = ">=3.4"
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/{{cookiecutter.vcs_hosting_namespace}}/{{cookiecutter.package_name}}.py"
+
+[tool.setuptools]
+zip-safe = true
+
+[tool.setuptools.packages.find]
+include = ["{{cookiecutter.package_name}}", "{{cookiecutter.package_name}}.*"]
+
+[tool.setuptools_scm]
+
+[tool.black]
+line-length = 100500
+
